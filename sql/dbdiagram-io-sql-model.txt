@@ -1,0 +1,81 @@
+Table region {
+  id integer [pk]
+
+  name varchar
+
+  created_at datetime
+  updated_at datetime
+}
+
+Table user {
+  id integer [pk]
+
+  auth_provider_id varchar
+
+  name varchar
+  email varchar
+
+  profile varchar
+  status varchar
+
+  created_at datetime
+  updated_at datetime
+}
+
+Table beneficiary {
+  id integer [pk]
+
+  name varchar
+
+  birthday date
+
+  phone varchar
+  email varchar
+
+  status varchar
+
+  region_id integer [ref: > region.id]
+
+  created_by integer [ref: > user.id]
+  updated_by integer [ref: > user.id]
+
+  created_at datetime
+  updated_at datetime
+}
+
+Table event {
+  id integer [pk]
+
+  title varchar
+  description text
+
+  event_datetime datetime
+
+  location varchar
+
+  capacity integer
+
+  status varchar
+
+  created_by integer [ref: > user.id]
+  updated_by integer [ref: > user.id]
+
+  created_at datetime
+  updated_at datetime
+}
+
+Table registration {
+  id integer [pk]
+
+  beneficiary_id integer [ref: > beneficiary.id]
+  event_id integer [ref: > event.id]
+
+  status varchar
+  attendance boolean
+
+  created_by integer [ref: > user.id]
+  updated_by integer [ref: > user.id]
+
+  created_at datetime
+  updated_at datetime
+}
