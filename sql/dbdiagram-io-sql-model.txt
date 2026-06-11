@@ -1,0 +1,116 @@
+Table tb_users {
+
+  id integer [pk]
+
+  name text [not null]
+
+  email text [not null, unique]
+
+  auth_provider_id text
+
+  profile text [not null]
+
+  status text [not null]
+
+  created_by integer
+  updated_by integer
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Table tb_regions {
+
+  id integer [pk]
+
+  name text [not null]
+
+  created_by integer [not null]
+  updated_by integer [not null]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Table tb_beneficiaries {
+
+  email text [pk]
+
+  name text [not null]
+
+  birthday date
+
+  phone text
+
+  status text [not null]
+
+  region_id integer [not null]
+
+  created_by integer [not null]
+  updated_by integer [not null]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Table tb_events {
+
+  id integer [pk]
+
+  title text [not null]
+
+  description text
+
+  event_datetime datetime [not null]
+
+  location text
+
+  capacity integer
+
+  status text [not null]
+
+  created_by integer [not null]
+  updated_by integer [not null]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Table tb_registrations {
+
+  id integer [pk]
+
+  beneficiary_id text [not null]
+
+  event_id integer [not null]
+
+  status text [not null]
+
+  attendance boolean
+
+  created_by integer [not null]
+  updated_by integer [not null]
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
+}
+
+Ref: tb_beneficiaries.region_id > tb_regions.id
+
+Ref: tb_registrations.beneficiary_id > tb_beneficiaries.email
+Ref: tb_registrations.event_id > tb_events.id
+
+Ref: tb_regions.created_by > tb_users.id
+Ref: tb_regions.updated_by > tb_users.id
+
+Ref: tb_beneficiaries.created_by > tb_users.id
+Ref: tb_beneficiaries.updated_by > tb_users.id
+
+Ref: tb_events.created_by > tb_users.id
+Ref: tb_events.updated_by > tb_users.id
+
+Ref: tb_registrations.created_by > tb_users.id
+Ref: tb_registrations.updated_by > tb_users.id
+
+Ref: tb_users.created_by > tb_users.id
+Ref: tb_users.updated_by > tb_users.id
