@@ -1,81 +1,116 @@
-Table region {
+Table tb_users {
+
   id integer [pk]
 
-  name varchar
+  name text [not null]
 
-  created_at datetime
-  updated_at datetime
+  email text [not null, unique]
+
+  auth_provider_id text
+
+  profile text [not null]
+
+  status text [not null]
+
+  created_by integer
+  updated_by integer
+
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
-Table user {
+Table tb_regions {
+
   id integer [pk]
 
-  auth_provider_id varchar
+  name text [not null]
 
-  name varchar
-  email varchar
+  created_by integer [not null]
+  updated_by integer [not null]
 
-  profile varchar
-  status varchar
-
-  created_at datetime
-  updated_at datetime
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
-Table beneficiary {
-  id integer [pk]
+Table tb_beneficiaries {
 
-  name varchar
+  email text [pk]
+
+  name text [not null]
 
   birthday date
 
-  phone varchar
-  email varchar
+  phone text
 
-  status varchar
+  status text [not null]
 
-  region_id integer [ref: > region.id]
+  region_id integer [not null]
 
-  created_by integer [ref: > user.id]
-  updated_by integer [ref: > user.id]
+  created_by integer [not null]
+  updated_by integer [not null]
 
-  created_at datetime
-  updated_at datetime
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
-Table event {
+Table tb_events {
+
   id integer [pk]
 
-  title varchar
+  title text [not null]
+
   description text
 
-  event_datetime datetime
+  event_datetime datetime [not null]
 
-  location varchar
+  location text
 
   capacity integer
 
-  status varchar
+  status text [not null]
 
-  created_by integer [ref: > user.id]
-  updated_by integer [ref: > user.id]
+  created_by integer [not null]
+  updated_by integer [not null]
 
-  created_at datetime
-  updated_at datetime
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
 
-Table registration {
+Table tb_registrations {
+
   id integer [pk]
 
-  beneficiary_id integer [ref: > beneficiary.id]
-  event_id integer [ref: > event.id]
+  beneficiary_id text [not null]
 
-  status varchar
+  event_id integer [not null]
+
+  status text [not null]
+
   attendance boolean
 
-  created_by integer [ref: > user.id]
-  updated_by integer [ref: > user.id]
+  created_by integer [not null]
+  updated_by integer [not null]
 
-  created_at datetime
-  updated_at datetime
+  created_at datetime [not null]
+  updated_at datetime [not null]
 }
+
+Ref: tb_beneficiaries.region_id > tb_regions.id
+
+Ref: tb_registrations.beneficiary_id > tb_beneficiaries.email
+Ref: tb_registrations.event_id > tb_events.id
+
+Ref: tb_regions.created_by > tb_users.id
+Ref: tb_regions.updated_by > tb_users.id
+
+Ref: tb_beneficiaries.created_by > tb_users.id
+Ref: tb_beneficiaries.updated_by > tb_users.id
+
+Ref: tb_events.created_by > tb_users.id
+Ref: tb_events.updated_by > tb_users.id
+
+Ref: tb_registrations.created_by > tb_users.id
+Ref: tb_registrations.updated_by > tb_users.id
+
+Ref: tb_users.created_by > tb_users.id
+Ref: tb_users.updated_by > tb_users.id
