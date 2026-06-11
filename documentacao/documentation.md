@@ -69,7 +69,7 @@ Durante o desenvolvimento da solução foram produzidos diversos artefatos de mo
 
 ## 3.1 Diagrama Conceitual
 
-[INSERIR IMAGEM DO DIAGRAMA CONCEITUAL]
+![Diagrama Conceitual](https://1drv.ms/i/c/c417189aeed0f9d1/IQTg5IW-yihCQ6XiK3P-hQelAWYOC7v2otpo6dM-M_N-ZnI?width=788&height=792)
 
 Descrição:
 
@@ -87,7 +87,7 @@ Principais entidades:
 
 ## 3.2 Diagrama de Classes
 
-[INSERIR IMAGEM DO DIAGRAMA DE CLASSES]
+![Diagrama de Classes](https://1drv.ms/i/c/c417189aeed0f9d1/IQQdQIWuqy9PT71fs8Az5mzXAVY51dle4Ybv7GebmAP5F8s?width=1159&height=2282)
 
 Descrição:
 
@@ -97,7 +97,7 @@ O diagrama de classes representa os objetos do sistema, seus atributos, relacion
 
 ## 3.3 Modelo Entidade-Relacionamento (ER)
 
-[INSERIR IMAGEM DO DIAGRAMA ER]
+![Modelo Entidade-Relacionamento](https://1drv.ms/i/c/c417189aeed0f9d1/IQT2jKpg0ztqTJvW-DH28lxZAaI9cm_0RUI0oYgxzIwr2P8?width=886&height=1376)
 
 Descrição:
 
@@ -525,12 +525,6 @@ Envio de:
 * Lembretes de eventos;
 * Pesquisas de satisfação;
 * Comunicados institucionais.
-
----
-
-## Relatórios
-
-Exportação de relatórios operacionais e gerenciais em PDF e Excel.
 
 ---
 
