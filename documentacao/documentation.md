@@ -87,7 +87,7 @@ Principais entidades:
 
 ## 3.2 Diagrama de Classes
 
-![Diagrama de Classes](https://1drv.ms/i/c/c417189aeed0f9d1/IQQdQIWuqy9PT71fs8Az5mzXAVY51dle4Ybv7GebmAP5F8s?width=659&height=1282)
+![Diagrama de Classes](https://1drv.ms/i/c/c417189aeed0f9d1/IQQdQIWuqy9PT71fs8Az5mzXAVY51dle4Ybv7GebmAP5F8s?width=548&height=682)
 
 Descrição:
 
