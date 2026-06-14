@@ -4,7 +4,7 @@
 
 A ONG Vida Plena atua há mais de 10 anos em comunidades periféricas da Grande São Paulo, promovendo ações de inclusão digital, capacitação profissional e campanhas de saúde. Com o crescimento das atividades, surgiram dificuldades relacionadas ao controle de beneficiários, eventos e histórico de participação.
 
-Antes da implantação da solução, a gestão das informações era realizada por meio de planilhas e grupos de WhatsApp, ocasionando duplicidade de dados, perda de informações e processos pouco eficientes. Para solucionar esses problemas, foi desenvolvida uma plataforma de gestão interna baseada em ferramentas No-Code, permitindo que a própria equipe da ONG possa administrar e evoluir o sistema sem necessidade de programação.
+A solução traz uma plataforma de gestão interna baseada em ferramentas No-Code, permitindo que a própria equipe da ONG possa administrar e evoluir o sistema sem necessidade de programação.
 
 ---
 
@@ -12,7 +12,7 @@ Antes da implantação da solução, a gestão das informações era realizada p
 
 O levantamento de requisitos foi realizado a partir da análise dos processos operacionais da ONG e dos principais problemas enfrentados pela equipe.
 
-Foram identificadas necessidades relacionadas ao controle de beneficiários, gerenciamento de eventos, controle de inscrições, registro de presença e automação de atividades administrativas. A partir dessas necessidades foram definidos os módulos do sistema, as regras de negócio e os fluxos operacionais da solução.
+Foram identificadas necessidades relacionadas ao controle de beneficiários, gerenciamento de eventos, controle de inscrições, registro de presença e automação de atividades administrativas. A partir disso, foram definidos os módulos do sistema, as regras de negócio e os fluxos operacionais da solução.
 
 ---
 
@@ -68,7 +68,7 @@ Representa as regiões geográficas utilizadas para classificação dos benefici
 
 Representa as pessoas atendidas pela ONG.
 
-**Atributos:** nome, e-mail, telefone, data de nascimento e status.
+**Atributos:** cpf, nome, e-mail, telefone, data de nascimento e status.
 
 Relacionamento: pertence a uma região.
 
