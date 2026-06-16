@@ -69,7 +69,7 @@ Durante o desenvolvimento da solução foram produzidos diversos artefatos de mo
 
 ## 3.1 Diagrama Conceitual
 
-![Diagrama Conceitual](https://1drv.ms/i/c/c417189aeed0f9d1/IQTg5IW-yihCQ6XiK3P-hQelAWYOC7v2otpo6dM-M_N-ZnI?width=488&height=492)
+![Diagrama Conceitual](https://1drv.ms/i/c/c417189aeed0f9d1/IQQUbOiHrRjARZAivi9v8z_SAcn6n4w156L7zXxgGhF07Cc?width=488&height=492)
 
 Descrição:
 
@@ -87,7 +87,7 @@ Principais entidades:
 
 ## 3.2 Diagrama de Classes
 
-![Diagrama de Classes](https://1drv.ms/i/c/c417189aeed0f9d1/IQQdQIWuqy9PT71fs8Az5mzXAVY51dle4Ybv7GebmAP5F8s?width=548&height=682)
+![Diagrama de Classes](https://1drv.ms/i/c/c417189aeed0f9d1/IQTlnJ6jmMWRT5LuVTt8zGsQAaodfqcvAYNDaNvlCj68Ybg?width=548&height=682)
 
 Descrição:
 
@@ -97,7 +97,7 @@ O diagrama de classes representa os objetos do sistema, seus atributos, relacion
 
 ## 3.3 Modelo Entidade-Relacionamento (ER)
 
-![Modelo Entidade-Relacionamento](https://1drv.ms/i/c/c417189aeed0f9d1/IQT2jKpg0ztqTJvW-DH28lxZAaI9cm_0RUI0oYgxzIwr2P8?width=386&height=676)
+![Modelo Entidade-Relacionamento](https://1drv.ms/i/c/c417189aeed0f9d1/IQT2SVg5XU54Rpr3vxT9sHETAWJrSrkPMpRgOS7bKfZWSFs?width=386&height=676)
 
 Descrição:
 
@@ -264,6 +264,7 @@ Representam as pessoas atendidas pela ONG.
 
 Informações principais:
 
+* CPF
 * Nome
 * Data de nascimento
 * Telefone
@@ -340,7 +341,7 @@ Somente usuários com perfil ADMINISTRATOR podem:
 
 ## Beneficiários
 
-Somente beneficiários ACTIVE podem realizar inscrições.
+Somente beneficiários ACTIVE podem ter inscrições.
 
 ---
 
@@ -537,3 +538,13 @@ A adoção de ferramentas No-Code permitiu construir uma solução robusta, aces
 Além de resolver problemas históricos relacionados à organização das informações, a nova solução estabelece uma base sólida para crescimento futuro, possibilitando a expansão dos serviços oferecidos pela ONG e a melhoria contínua do acompanhamento dos beneficiários atendidos.
 
 A arquitetura escolhida prioriza simplicidade, baixo custo de manutenção e facilidade de evolução, garantindo que a ONG continue focada em sua missão social enquanto utiliza a tecnologia como ferramenta de apoio à gestão e tomada de decisão.
+
+---
+
+# 12. Artefatos
+
+* [GitHub](https://github.com/osmarsalesjr/the-full-life-ong-project)
+* [Link de Colaboração do Cenário no Make](https://us2.make.com/public/shared-scenario/T4H7XELEMAd/the-full-life-ong-update-registration-if-there)   
+* [Link de Leitura do Airtable](https://airtable.com/invite/l?inviteId=invry90dCb2CHp4gl&inviteToken=9a67db15fd9144072153c31a73ceed57e21287b9400f1cbd17b6ec733c0976e2&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts)
+* [Vídeo de Apresentação do Sistema ONG Vida Plena](https://www.youtube.com/watch?v=zPslgRq0SEU)
+* [Link do Portal ONG Vida Plena](https://projeto-ong-vida-plena.softr.app)

@@ -2,27 +2,19 @@
 
 ## Introdução
 
-A ONG Vida Plena atua há mais de 10 anos em comunidades periféricas da Grande São Paulo, promovendo ações de inclusão digital, capacitação profissional e campanhas de saúde. Com o crescimento das atividades, surgiram dificuldades relacionadas ao controle de beneficiários, eventos e histórico de participação.
-
-Antes da implantação da solução, a gestão das informações era realizada por meio de planilhas e grupos de WhatsApp, ocasionando duplicidade de dados, perda de informações e processos pouco eficientes. Para solucionar esses problemas, foi desenvolvida uma plataforma de gestão interna baseada em ferramentas No-Code, permitindo que a própria equipe da ONG possa administrar e evoluir o sistema sem necessidade de programação.
+A solução traz uma plataforma de gestão interna baseada em ferramentas No-Code, permitindo que a própria equipe da ONG possa administrar e evoluir o sistema sem necessidade de programação. O sistema visa reduzir as dificuldades relacionadas ao controle de beneficiários, eventos e histórico de participação.
 
 ---
 
 ## Levantamento de Requisitos
 
-O levantamento de requisitos foi realizado a partir da análise dos processos operacionais da ONG e dos principais problemas enfrentados pela equipe.
-
-Foram identificadas necessidades relacionadas ao controle de beneficiários, gerenciamento de eventos, controle de inscrições, registro de presença e automação de atividades administrativas. A partir dessas necessidades foram definidos os módulos do sistema, as regras de negócio e os fluxos operacionais da solução.
+Foram identificadas necessidades relacionadas ao controle de beneficiários, gerenciamento de eventos, controle de inscrições, registro de presença e automação de atividades administrativas. A partir disso, foram definidos os módulos do sistema, as regras de negócio e os fluxos operacionais da solução.
 
 ---
 
 ## Raciocínio por Trás da Modelagem do Banco Visual
 
-A modelagem foi construída considerando os principais elementos do negócio e seus relacionamentos.
-
-O beneficiário foi definido como a entidade central do sistema, pois representa a pessoa atendida pela ONG. Os eventos representam as atividades promovidas pela instituição, enquanto as inscrições registram a participação dos beneficiários nos eventos.
-
-Também foram criadas entidades específicas para usuários e regiões, permitindo controlar o acesso à plataforma e organizar os beneficiários de acordo com sua localização geográfica.
+A modelagem foi construída considerando os principais elementos do negócio e seus relacionamentos. O beneficiário foi definido como a entidade central do sistema, pois representa a pessoa atendida pela ONG. Os eventos representam as atividades promovidas pela instituição, enquanto as inscrições registram a participação dos beneficiários nos eventos.
 
 ---
 
@@ -68,7 +60,7 @@ Representa as regiões geográficas utilizadas para classificação dos benefici
 
 Representa as pessoas atendidas pela ONG.
 
-**Atributos:** nome, e-mail, telefone, data de nascimento e status.
+**Atributos:** cpf, nome, e-mail, telefone, data de nascimento e status.
 
 Relacionamento: pertence a uma região.
 
@@ -134,8 +126,11 @@ Sob a perspectiva ética, a plataforma foi projetada para garantir simplicidade 
 
 ---
 
-## Conclusão
+## Artefatos
 
-A implementação da plataforma permitiu substituir processos manuais por uma solução centralizada, organizada e de fácil manutenção. A combinação de Airtable, Softr, Make e Gmail proporcionou uma arquitetura compatível com a realidade da ONG, possibilitando maior controle sobre beneficiários, eventos e inscrições, além da automação de atividades operacionais.
-
-Como resultado, a organização passou a contar com informações mais confiáveis, processos mais eficientes e uma base tecnológica capaz de apoiar futuras evoluções e ampliar o impacto de suas ações sociais.
+* [GitHub](https://github.com/osmarsalesjr/the-full-life-ong-project)
+* [Link de Colaboração do Cenário no Make](https://us2.make.com/public/shared-scenario/T4H7XELEMAd/the-full-life-ong-update-registration-if-there)   
+* [Link de Leitura do Airtable](https://airtable.com/invite/l?inviteId=invry90dCb2CHp4gl&inviteToken=9a67db15fd9144072153c31a73ceed57e21287b9400f1cbd17b6ec733c0976e2&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts)
+* [Vídeo de Apresentação do Sistema ONG Vida Plena](https://www.youtube.com/watch?v=zPslgRq0SEU)
+* [Link do Portal ONG Vida Plena](https://projeto-ong-vida-plena.softr.app)
+* [Documentação Técnica Completa]()
