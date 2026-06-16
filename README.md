@@ -20,6 +20,16 @@ Gmail
 
 ---
 
+## Diagramas
+
+### Diagrama de Classes
+![Diagrama de Classes](./diagramas/uml-mermaid-diagram.png)
+
+### Diagrama de Entidade-Relacionamento
+![DER](./diagramas/der-dbdiagram-io.png)
+
+---
+
 ## Componentes da Solução
 
 ### Airtable
