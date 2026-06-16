@@ -1,0 +1,1504 @@
+{
+    "name": "TheFullLifeOng_UpdateRegistrationIfTheresCapacity",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:TriggerWatchRecords",
+            "version": 3,
+            "parameters": {
+                "base": "appE8czpGCmBgMf5n",
+                "view": "",
+                "table": "tblZeHl4im5CvUeCh",
+                "config": {
+                    "labelField": "Event Id Registration",
+                    "triggerField": "Created At"
+                },
+                "formula": "",
+                "maxRecords": 10,
+                "__IMTCONN__": 9309581,
+                "useColumnId": false
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 150
+                },
+                "restore": {
+                    "parameters": {
+                        "base": {
+                            "label": "The Full Life ONG"
+                        },
+                        "view": {
+                            "label": "Empty"
+                        },
+                        "table": {
+                            "label": "tb_registrations"
+                        },
+                        "config": {
+                            "nested": {
+                                "labelField": {
+                                    "label": "Event Id Registration"
+                                },
+                                "triggerField": {
+                                    "label": "Created At"
+                                }
+                            }
+                        },
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "MyAirtableTokenOrKeyConnection (User ID: usrpDbGXKVSoSz2bj)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "config",
+                        "spec": [
+                            {
+                                "name": "triggerField",
+                                "type": "select",
+                                "label": "Trigger field",
+                                "required": true
+                            },
+                            {
+                                "name": "triggerField",
+                                "type": "hidden"
+                            },
+                            {
+                                "name": "labelField",
+                                "type": "select",
+                                "label": "Label field",
+                                "required": true
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Trigger configuration"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Id",
+                        "type": "number",
+                        "label": "Id"
+                    },
+                    {
+                        "name": "Beneficiary Id Registration",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Beneficiary Id Registration"
+                    },
+                    {
+                        "name": "Event Id Registration",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Event Id Registration"
+                    },
+                    {
+                        "name": "Status",
+                        "type": "text",
+                        "label": "Status"
+                    },
+                    {
+                        "name": "Attendance",
+                        "type": "boolean",
+                        "label": "Attendance"
+                    },
+                    {
+                        "name": "Created By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Created By"
+                    },
+                    {
+                        "name": "Updated By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Updated By"
+                    },
+                    {
+                        "name": "Created At",
+                        "type": "date",
+                        "label": "Created At"
+                    },
+                    {
+                        "name": "Updated At",
+                        "type": "date",
+                        "label": "Updated At"
+                    },
+                    {
+                        "name": "Name Beneficiary Registration",
+                        "type": "array",
+                        "label": "Name Beneficiary Registration"
+                    },
+                    {
+                        "name": "User Name Creator",
+                        "type": "array",
+                        "label": "User Name Creator"
+                    },
+                    {
+                        "name": "User Name Updater",
+                        "type": "array",
+                        "label": "User Name Updater"
+                    },
+                    {
+                        "name": "Event Title Registration",
+                        "type": "array",
+                        "label": "Event Title Registration"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "airtable:ActionGetRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 9309581
+            },
+            "mapper": {
+                "id": "{{1.`Event Id Registration`[]}}",
+                "base": "appE8czpGCmBgMf5n",
+                "table": "tblNVq1WBnlFL36ZV",
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 150
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "The Full Life ONG"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "tb_events"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "MyAirtableTokenOrKeyConnection (User ID: usrpDbGXKVSoSz2bj)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "Record ID",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Id",
+                        "type": "number",
+                        "label": "Id"
+                    },
+                    {
+                        "name": "Title",
+                        "type": "text",
+                        "label": "Title"
+                    },
+                    {
+                        "name": "Description",
+                        "type": "text",
+                        "label": "Description"
+                    },
+                    {
+                        "name": "Event Date Time",
+                        "time": true,
+                        "type": "date",
+                        "label": "Event Date Time"
+                    },
+                    {
+                        "name": "Location",
+                        "type": "text",
+                        "label": "Location"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "label": "capacity"
+                    },
+                    {
+                        "name": "Status",
+                        "type": "text",
+                        "label": "Status"
+                    },
+                    {
+                        "name": "Created By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Created By"
+                    },
+                    {
+                        "name": "User Name Creator",
+                        "type": "array",
+                        "label": "User Name Creator"
+                    },
+                    {
+                        "name": "Updated By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Updated By"
+                    },
+                    {
+                        "name": "User Name Updater",
+                        "type": "array",
+                        "label": "User Name Updater"
+                    },
+                    {
+                        "name": "Created At",
+                        "type": "date",
+                        "label": "Created At"
+                    },
+                    {
+                        "name": "Updated At",
+                        "type": "date",
+                        "label": "Updated At"
+                    },
+                    {
+                        "name": "tb_registrations",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "tb_registrations"
+                    },
+                    {
+                        "name": "Confirmed Registrations Count",
+                        "type": "number",
+                        "label": "Confirmed Registrations Count"
+                    },
+                    {
+                        "name": "Available Spots",
+                        "type": "text",
+                        "label": "Available Spots"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "module": "airtable:ActionGetRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 9309581
+            },
+            "mapper": {
+                "id": "{{1.`Beneficiary Id Registration`[]}}",
+                "base": "appE8czpGCmBgMf5n",
+                "table": "tblgbuP9GojJWc7wk",
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 150
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "The Full Life ONG"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "tb_beneficiaries"
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "MyAirtableTokenOrKeyConnection (User ID: usrpDbGXKVSoSz2bj)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "Record ID",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Email",
+                        "type": "text",
+                        "label": "Email"
+                    },
+                    {
+                        "name": "Name",
+                        "type": "text",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "Birthday",
+                        "time": false,
+                        "type": "date",
+                        "label": "Birthday"
+                    },
+                    {
+                        "name": "Phone",
+                        "type": "text",
+                        "label": "Phone"
+                    },
+                    {
+                        "name": "Status",
+                        "type": "text",
+                        "label": "Status"
+                    },
+                    {
+                        "name": "Region Beneficiary",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Region Beneficiary"
+                    },
+                    {
+                        "name": "Region Name",
+                        "type": "array",
+                        "label": "Region Name"
+                    },
+                    {
+                        "name": "Created At",
+                        "type": "date",
+                        "label": "Created At"
+                    },
+                    {
+                        "name": "Updated At",
+                        "type": "date",
+                        "label": "Updated At"
+                    },
+                    {
+                        "name": "Created By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Created By"
+                    },
+                    {
+                        "name": "User Name Creator",
+                        "type": "array",
+                        "label": "User Name Creator"
+                    },
+                    {
+                        "name": "Updated By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Updated By"
+                    },
+                    {
+                        "name": "User Name Updater",
+                        "type": "array",
+                        "label": "User Name Updater"
+                    },
+                    {
+                        "name": "tb_registrations",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "tb_registrations"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 9309581
+            },
+            "mapper": {
+                "base": "appE8czpGCmBgMf5n",
+                "table": "tblZeHl4im5CvUeCh",
+                "formula": "AND(\r\n    {Event Id Registration} = {{3.Id}},\r\n    {Status} = \"CONFIRMED\"\r\n)",
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 150
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "The Full Life ONG"
+                        },
+                        "sort": {
+                            "mode": "chose"
+                        },
+                        "view": {
+                            "mode": "chose"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "tb_registrations"
+                        },
+                        "fields": {
+                            "mode": "chose"
+                        },
+                        "maxRecords": {
+                            "empty": true
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "MyAirtableTokenOrKeyConnection (User ID: usrpDbGXKVSoSz2bj)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "dynamic": true,
+                                "options": []
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Sort"
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "type": "uinteger",
+                        "label": "Total number of bundles"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "type": "uinteger",
+                        "label": "Bundle order position"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Id",
+                        "type": "number",
+                        "label": "Id"
+                    },
+                    {
+                        "name": "Beneficiary Id Registration",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Beneficiary Id Registration"
+                    },
+                    {
+                        "name": "Event Id Registration",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Event Id Registration"
+                    },
+                    {
+                        "name": "Status",
+                        "type": "text",
+                        "label": "Status"
+                    },
+                    {
+                        "name": "Attendance",
+                        "type": "boolean",
+                        "label": "Attendance"
+                    },
+                    {
+                        "name": "Created By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Created By"
+                    },
+                    {
+                        "name": "Updated By",
+                        "spec": {
+                            "label": "Record ID"
+                        },
+                        "type": "array",
+                        "label": "Updated By"
+                    },
+                    {
+                        "name": "Created At",
+                        "type": "date",
+                        "label": "Created At"
+                    },
+                    {
+                        "name": "Updated At",
+                        "type": "date",
+                        "label": "Updated At"
+                    },
+                    {
+                        "name": "Name Beneficiary Registration",
+                        "type": "array",
+                        "label": "Name Beneficiary Registration"
+                    },
+                    {
+                        "name": "User Name Creator",
+                        "type": "array",
+                        "label": "User Name Creator"
+                    },
+                    {
+                        "name": "User Name Updater",
+                        "type": "array",
+                        "label": "User Name Updater"
+                    },
+                    {
+                        "name": "Event Title Registration",
+                        "type": "array",
+                        "label": "Event Title Registration"
+                    }
+                ],
+                "advanced": true
+            }
+        },
+        {
+            "id": 15,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 4
+            },
+            "filter": null,
+            "mapper": {
+                "Status": "{{4.Status}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 150
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Airtable - Search Records [4]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                },
+                "advanced": true
+            }
+        },
+        {
+            "id": 6,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "parameters": {
+                "else": 1
+            },
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 1500,
+                    "y": 150
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 7,
+                            "module": "airtable:ActionUpdateRecords",
+                            "version": 3,
+                            "parameters": {
+                                "__IMTCONN__": 9309581
+                            },
+                            "filter": {
+                                "name": "IsThereCapacity",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{15.`__IMTAGGLENGTH__`}}",
+                                            "b": "{{3.capacity}}",
+                                            "o": "number:less"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "id": "{{1.id}}",
+                                "base": "appE8czpGCmBgMf5n",
+                                "table": "tblZeHl4im5CvUeCh",
+                                "record": {
+                                    "fldSLZ7oTcdUQncr1": "CONFIRMED",
+                                    "fldVa0HDShZAT7HAO": [
+                                        "{{1.`Updated By`[]}}"
+                                    ]
+                                },
+                                "typecast": false,
+                                "useColumnId": false
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1800,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "base": {
+                                            "label": "The Full Life ONG"
+                                        },
+                                        "table": {
+                                            "label": "tb_registrations"
+                                        },
+                                        "record": {
+                                            "nested": {
+                                                "fldGLZJenLxzkqXbk": {
+                                                    "mode": "chose"
+                                                },
+                                                "fldGNRVP29T3x3VO9": {
+                                                    "mode": "chose"
+                                                },
+                                                "fldSLZ7oTcdUQncr1": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldVa0HDShZAT7HAO": {
+                                                    "mode": "chose",
+                                                    "items": [
+                                                        null
+                                                    ]
+                                                },
+                                                "fldo4qabRkMK94Jx5": {
+                                                    "mode": "chose"
+                                                },
+                                                "fldwykxerbFu0eNsb": {
+                                                    "mode": "chose"
+                                                }
+                                            }
+                                        },
+                                        "typecast": {
+                                            "mode": "chose"
+                                        },
+                                        "useColumnId": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "airtable3"
+                                            },
+                                            "label": "MyAirtableTokenOrKeyConnection (User ID: usrpDbGXKVSoSz2bj)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:airtable3,airtable2",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "base",
+                                        "type": "select",
+                                        "label": "Base",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "typecast",
+                                        "type": "boolean",
+                                        "label": "Smart links",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useColumnId",
+                                        "type": "boolean",
+                                        "label": "Use Column ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "table",
+                                        "type": "select",
+                                        "label": "Table",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Record ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "record",
+                                        "spec": [
+                                            {
+                                                "name": "fldo4qabRkMK94Jx5",
+                                                "spec": {
+                                                    "name": "value",
+                                                    "label": "Record ID"
+                                                },
+                                                "type": "array",
+                                                "label": "Beneficiary Id Registration"
+                                            },
+                                            {
+                                                "name": "fldGNRVP29T3x3VO9",
+                                                "spec": {
+                                                    "name": "value",
+                                                    "label": "Record ID"
+                                                },
+                                                "type": "array",
+                                                "label": "Event Id Registration"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldSLZ7oTcdUQncr1",
+                                                "type": "select",
+                                                "label": "Status"
+                                            },
+                                            {
+                                                "name": "fldGLZJenLxzkqXbk",
+                                                "type": "boolean",
+                                                "label": "Attendance"
+                                            },
+                                            {
+                                                "name": "fldwykxerbFu0eNsb",
+                                                "spec": {
+                                                    "name": "value",
+                                                    "label": "Record ID"
+                                                },
+                                                "type": "array",
+                                                "label": "Created By"
+                                            },
+                                            {
+                                                "name": "fldVa0HDShZAT7HAO",
+                                                "spec": {
+                                                    "name": "value",
+                                                    "label": "Record ID"
+                                                },
+                                                "type": "array",
+                                                "label": "Updated By"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Record"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "createdTime",
+                                        "type": "date",
+                                        "label": "Created Time"
+                                    },
+                                    {
+                                        "name": "Id",
+                                        "type": "number",
+                                        "label": "Id"
+                                    },
+                                    {
+                                        "name": "Beneficiary Id Registration",
+                                        "spec": {
+                                            "label": "Record ID"
+                                        },
+                                        "type": "array",
+                                        "label": "Beneficiary Id Registration"
+                                    },
+                                    {
+                                        "name": "Event Id Registration",
+                                        "spec": {
+                                            "label": "Record ID"
+                                        },
+                                        "type": "array",
+                                        "label": "Event Id Registration"
+                                    },
+                                    {
+                                        "name": "Status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "name": "Attendance",
+                                        "type": "boolean",
+                                        "label": "Attendance"
+                                    },
+                                    {
+                                        "name": "Created By",
+                                        "spec": {
+                                            "label": "Record ID"
+                                        },
+                                        "type": "array",
+                                        "label": "Created By"
+                                    },
+                                    {
+                                        "name": "Updated By",
+                                        "spec": {
+                                            "label": "Record ID"
+                                        },
+                                        "type": "array",
+                                        "label": "Updated By"
+                                    },
+                                    {
+                                        "name": "Created At",
+                                        "type": "date",
+                                        "label": "Created At"
+                                    },
+                                    {
+                                        "name": "Updated At",
+                                        "type": "date",
+                                        "label": "Updated At"
+                                    },
+                                    {
+                                        "name": "Name Beneficiary Registration",
+                                        "type": "array",
+                                        "label": "Name Beneficiary Registration"
+                                    },
+                                    {
+                                        "name": "User Name Creator",
+                                        "type": "array",
+                                        "label": "User Name Creator"
+                                    },
+                                    {
+                                        "name": "User Name Updater",
+                                        "type": "array",
+                                        "label": "User Name Updater"
+                                    },
+                                    {
+                                        "name": "Event Title Registration",
+                                        "type": "array",
+                                        "label": "Event Title Registration"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 10,
+                            "module": "google-email:sendAnEmail",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 8802468
+                            },
+                            "mapper": {
+                                "to": [
+                                    "{{11.Email}}"
+                                ],
+                                "content": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n</head>\r\n<body style=\"font-family: Arial, Helvetica, sans-serif; color: #333333; line-height: 1.6;\">\r\n\r\n<p>Olá, <strong>{{11.Name}}</strong>,</p>\r\n\r\n<p>\r\nEsperamos que você esteja bem.\r\n</p>\r\n\r\n<p>\r\nTemos o prazer de informar que sua inscrição para o evento\r\n<strong>{{3.Title}}</strong>, promovido pela ONG Vida Plena, foi confirmada com sucesso.\r\n</p>\r\n\r\n<h3 style=\"color: #2c3e50;\">Detalhes do Evento</h3>\r\n\r\n<p>\r\n<strong>Título:</strong><br>\r\n{{3.Title}}\r\n</p>\r\n\r\n<p>\r\n<strong>Descrição:</strong><br>\r\n{{3.Description}}\r\n</p>\r\n\r\n<p>\r\n<strong>Data e Horário:</strong><br>\r\n{{formatDate(3.`Event Date Time`; \"DD/MM/YYYY HH:mm\"; \"America/Sao_Paulo\")}}\r\n</p>\r\n\r\n<p>\r\n<strong>Local:</strong><br>\r\n{{3.Location}}\r\n</p>\r\n\r\n<hr style=\"border: 1px solid #eeeeee; margin: 25px 0;\">\r\n\r\n<p>\r\nSua participação é muito importante para nós. Esperamos que este evento seja uma oportunidade enriquecedora de aprendizado, integração e desenvolvimento.\r\n</p>\r\n\r\n<p>\r\nCaso tenha alguma dúvida ou necessite de mais informações, entre em contato com nossa equipe.\r\n</p>\r\n\r\n<p>\r\nAgradecemos seu interesse e esperamos vê-lo(a) em breve.\r\n</p>\r\n\r\n<br>\r\n\r\n<p>\r\nAtenciosamente,\r\n</p>\r\n\r\n<p>\r\n<strong>Equipe Vida Plena</strong><br>\r\nONG Vida Plena\r\n</p>\r\n\r\n</body>\r\n</html>",
+                                "subject": "Inscrição Confirmada | Projeto ONG Vida Plena",
+                                "bodyType": "rawHtml"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 2100,
+                                    "y": 0
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "cc": {
+                                            "mode": "chose"
+                                        },
+                                        "to": {
+                                            "mode": "chose",
+                                            "items": [
+                                                null
+                                            ]
+                                        },
+                                        "bcc": {
+                                            "mode": "chose"
+                                        },
+                                        "from": {
+                                            "mode": "chose"
+                                        },
+                                        "bodyType": {
+                                            "label": "Raw HTML"
+                                        },
+                                        "attachments": {
+                                            "mode": "chose"
+                                        },
+                                        "emailHeaders": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "google-email"
+                                            },
+                                            "label": "MyGmailConnection (osmar.junior.227142@a.fecaf.com.br)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:google-email",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "to",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address",
+                                            "required": true,
+                                            "validate": true
+                                        },
+                                        "type": "array",
+                                        "label": "To",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "subject",
+                                        "type": "text",
+                                        "label": "Subject"
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "type": "select",
+                                        "label": "Body type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "rawHtml",
+                                                "collection"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "attachments",
+                                        "spec": {
+                                            "name": "value",
+                                            "spec": [
+                                                {
+                                                    "name": "filename",
+                                                    "type": "filename",
+                                                    "label": "File name",
+                                                    "required": true,
+                                                    "semantic": "file:name"
+                                                },
+                                                {
+                                                    "name": "data",
+                                                    "type": "buffer",
+                                                    "label": "Data",
+                                                    "required": true,
+                                                    "semantic": "file:data"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Attachment"
+                                        },
+                                        "type": "array",
+                                        "label": "Attachments"
+                                    },
+                                    {
+                                        "name": "from",
+                                        "type": "select",
+                                        "label": "From"
+                                    },
+                                    {
+                                        "name": "cc",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address"
+                                        },
+                                        "type": "array",
+                                        "label": "CC recipients"
+                                    },
+                                    {
+                                        "name": "bcc",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address"
+                                        },
+                                        "type": "array",
+                                        "label": "BCC recipients"
+                                    },
+                                    {
+                                        "name": "emailHeaders",
+                                        "spec": {
+                                            "name": "value",
+                                            "spec": [
+                                                {
+                                                    "name": "key",
+                                                    "type": "text",
+                                                    "label": "Key",
+                                                    "required": true
+                                                },
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Value"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Email header"
+                                        },
+                                        "type": "array",
+                                        "label": "Additional email headers"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "type": "text",
+                                        "label": "Content"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 13,
+                            "module": "google-email:sendAnEmail",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 8802468
+                            },
+                            "mapper": {
+                                "to": [
+                                    "{{11.Email}}"
+                                ],
+                                "content": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n</head>\r\n<body style=\"font-family: Arial, Helvetica, sans-serif; color: #333333; line-height: 1.6;\">\r\n\r\n<p>Olá, <strong>{{11.Name}}</strong>,</p>\r\n\r\n<p>\r\nEsperamos que você esteja bem.\r\n</p>\r\n\r\n<p>\r\nA sua solicitação de inscrição para o evento\r\n<strong>{{3.Title}}</strong>, promovido pela ONG Vida Plena, está em lista de espera devido o evento ter atingido sua capacidade máxima de inscrições. Caso haja alguma vaga disponível, você será informado.\r\n</p>\r\n\r\n<h3 style=\"color: #2c3e50;\">Detalhes do Evento</h3>\r\n\r\n<p>\r\n<strong>Título:</strong><br>\r\n{{3.Title}}\r\n</p>\r\n\r\n<p>\r\n<strong>Descrição:</strong><br>\r\n{{3.Description}}\r\n</p>\r\n\r\n<p>\r\n<strong>Data e Horário:</strong><br>\r\n{{formatDate(3.`Event Date Time`; \"DD/MM/YYYY HH:mm\"; \"America/Sao_Paulo\")}}\r\n</p>\r\n\r\n<p>\r\n<strong>Local:</strong><br>\r\n{{3.Location}}\r\n</p>\r\n\r\n<hr style=\"border: 1px solid #eeeeee; margin: 25px 0;\">\r\n\r\n\r\n<p>\r\nCaso tenha alguma dúvida ou necessite de mais informações, entre em contato com nossa equipe.\r\n</p>\r\n\r\n<p>\r\nAgradecemos seu interesse e esperamos vê-lo(a) em breve.\r\n</p>\r\n\r\n<br>\r\n\r\n<p>\r\nAtenciosamente,\r\n</p>\r\n\r\n<p>\r\n<strong>Equipe Vida Plena</strong><br>\r\nONG Vida Plena\r\n</p>\r\n\r\n</body>\r\n</html>",
+                                "subject": "Inscrição em Lista de Espera| Projeto ONG Vida Plena",
+                                "bodyType": "rawHtml"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1800,
+                                    "y": 300
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "cc": {
+                                            "mode": "chose"
+                                        },
+                                        "to": {
+                                            "mode": "chose",
+                                            "items": [
+                                                null
+                                            ]
+                                        },
+                                        "bcc": {
+                                            "mode": "chose"
+                                        },
+                                        "from": {
+                                            "mode": "chose"
+                                        },
+                                        "bodyType": {
+                                            "label": "Raw HTML"
+                                        },
+                                        "attachments": {
+                                            "mode": "chose"
+                                        },
+                                        "emailHeaders": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "google-email"
+                                            },
+                                            "label": "MyGmailConnection (osmar.junior.227142@a.fecaf.com.br)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:google-email",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "to",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address",
+                                            "required": true,
+                                            "validate": true
+                                        },
+                                        "type": "array",
+                                        "label": "To",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "subject",
+                                        "type": "text",
+                                        "label": "Subject"
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "type": "select",
+                                        "label": "Body type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "rawHtml",
+                                                "collection"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "attachments",
+                                        "spec": {
+                                            "name": "value",
+                                            "spec": [
+                                                {
+                                                    "name": "filename",
+                                                    "type": "filename",
+                                                    "label": "File name",
+                                                    "required": true,
+                                                    "semantic": "file:name"
+                                                },
+                                                {
+                                                    "name": "data",
+                                                    "type": "buffer",
+                                                    "label": "Data",
+                                                    "required": true,
+                                                    "semantic": "file:data"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Attachment"
+                                        },
+                                        "type": "array",
+                                        "label": "Attachments"
+                                    },
+                                    {
+                                        "name": "from",
+                                        "type": "select",
+                                        "label": "From"
+                                    },
+                                    {
+                                        "name": "cc",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address"
+                                        },
+                                        "type": "array",
+                                        "label": "CC recipients"
+                                    },
+                                    {
+                                        "name": "bcc",
+                                        "spec": {
+                                            "name": "value",
+                                            "type": "email",
+                                            "label": "Recipient email address"
+                                        },
+                                        "type": "array",
+                                        "label": "BCC recipients"
+                                    },
+                                    {
+                                        "name": "emailHeaders",
+                                        "spec": {
+                                            "name": "value",
+                                            "spec": [
+                                                {
+                                                    "name": "key",
+                                                    "type": "text",
+                                                    "label": "Key",
+                                                    "required": true
+                                                },
+                                                {
+                                                    "name": "value",
+                                                    "type": "text",
+                                                    "label": "Value"
+                                                }
+                                            ],
+                                            "type": "collection",
+                                            "label": "Email header"
+                                        },
+                                        "type": "array",
+                                        "label": "Additional email headers"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "type": "text",
+                                        "label": "Content"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us2.make.com",
+        "notes": []
+    }
+}

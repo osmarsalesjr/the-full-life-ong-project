@@ -538,3 +538,13 @@ A adoção de ferramentas No-Code permitiu construir uma solução robusta, aces
 Além de resolver problemas históricos relacionados à organização das informações, a nova solução estabelece uma base sólida para crescimento futuro, possibilitando a expansão dos serviços oferecidos pela ONG e a melhoria contínua do acompanhamento dos beneficiários atendidos.
 
 A arquitetura escolhida prioriza simplicidade, baixo custo de manutenção e facilidade de evolução, garantindo que a ONG continue focada em sua missão social enquanto utiliza a tecnologia como ferramenta de apoio à gestão e tomada de decisão.
+
+---
+
+# 12. Artefatos
+
+* [GitHub](https://github.com/osmarsalesjr/the-full-life-ong-project)
+* [Link de Colaboração do Cenário no Make](https://us2.make.com/public/shared-scenario/T4H7XELEMAd/the-full-life-ong-update-registration-if-there)   
+* [Link de Leitura do Airtable](https://airtable.com/invite/l?inviteId=invry90dCb2CHp4gl&inviteToken=9a67db15fd9144072153c31a73ceed57e21287b9400f1cbd17b6ec733c0976e2&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts)
+* [Vídeo de Apresentação do Sistema ONG Vida Plena](https://www.youtube.com/watch?v=zPslgRq0SEU)
+* [Link do Portal ONG Vida Plena](https://projeto-ong-vida-plena.softr.app)
